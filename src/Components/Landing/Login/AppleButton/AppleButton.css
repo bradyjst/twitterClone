@@ -1,0 +1,14 @@
+.applebutton {
+	width: 300px;
+	height: 40px;
+	font-weight: 900;
+	border-radius: 20px;
+	border: 0 solid black;
+	align-items: center;
+}
+
+.apple-logo {
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+}

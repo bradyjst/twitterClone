@@ -1,0 +1,178 @@
+/* Default mobile styles */
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	box-sizing: border-box; /* This ensures padding doesn't affect the total width/height of elements */
+}
+
+.container {
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.container-left {
+	background-color: rgb(0, 0, 0);
+	font-family: "TwitterChirpExtendedHeavy", "Verdana", -apple-system,
+		BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	width: 100vw;
+	height: auto; /* Adjust height for mobile */
+}
+
+.container-right {
+	background-color: rgb(0, 0, 0);
+	font-family: "TwitterChirpExtendedHeavy", "Verdana", -apple-system,
+		BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	padding-top: 90px;
+	padding-left: 35px;
+	width: 100vw;
+	height: auto; /* Adjust height for mobile */
+}
+
+.happenspan {
+	font-size: 64px;
+	font-weight: 700;
+	line-height: 84px;
+	letter-spacing: -1.2px;
+}
+
+.happencontainer {
+	margin-bottom: 20px;
+	width: auto;
+	word-wrap: break-word;
+	min-width: 0px;
+}
+
+.joinspan {
+	font-size: 31px;
+	font-weight: 700;
+	line-height: 84px;
+	letter-spacing: -1.2px;
+}
+
+.joincontainer {
+	margin-bottom: 10px;
+}
+
+.external-auth {
+	display: flex;
+	flex-direction: column;
+}
+
+.break {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.or {
+	margin-left: 6px;
+	margin-right: 6px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.line {
+	background-color: rgb(47, 51, 54);
+	width: 130px;
+	height: 1px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.tos {
+	font-size: 10px;
+	color: rgb(113, 118, 123);
+	width: 320px;
+	margin-bottom: 60px;
+}
+
+.tos-links {
+	font-size: 10px;
+	text-decoration: none;
+	color: rgb(29, 155, 240);
+}
+
+.signed-in {
+	margin-bottom: 20px;
+	font-weight: 900;
+}
+
+.sign-in-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.x-logo {
+	width: 10em; /* Adjust for mobile */
+	height: auto; /* Keep the aspect ratio */
+}
+
+/* Media query for desktop screens */
+@media only screen and (min-width: 768px) {
+	.container {
+		flex-direction: row; /* Original desktop layout */
+	}
+
+	.container-left {
+		background-color: rgb(0, 0, 0);
+		width: 55vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.x-logo {
+		width: 22em; /* Original desktop size */
+		height: 22em;
+	}
+
+	.container-right {
+		background-color: rgb(0, 0, 0);
+		width: 45vw;
+		height: 100vh;
+	}
+}
+
+/* .login-container {
+	background-color: aqua;
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.username {
+	padding-left: 3px;
+	border-radius: 5px;
+	margin: 5px;
+	border: transparent;
+}
+
+.password {
+	padding-left: 3px;
+	border-radius: 5px;
+	margin: 5px;
+	border: transparent;
+}
+
+.login-button {
+	border-radius: 5px;
+	margin: 5px;
+	border: transparent;
+	background-color: white;
+	cursor: pointer;
+}
+
+.signup {
+	margin-left: 5px;
+	cursor: pointer;
+} */

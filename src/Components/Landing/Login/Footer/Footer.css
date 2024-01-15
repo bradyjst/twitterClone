@@ -1,0 +1,20 @@
+.footer-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 25px;
+}
+
+.footer-link {
+	text-decoration: none;
+	color: rgb(113, 118, 123);
+	font-size: 14px;
+	margin-left: 10px;
+	margin-right: 10px;
+
+	margin-bottom: 8px;
+}

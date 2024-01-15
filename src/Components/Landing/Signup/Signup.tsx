@@ -12,17 +12,23 @@ export const Signup: React.FC<SignupProps> = () => {
 	console.log(username);
 	console.log(password);
 
+	const createUserApi = `http://localhost:8080/users`;
+
 	const handleSignup = async (
 		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
 	) => {
 		e.preventDefault();
-		const formData = new FormData();
-		formData.append("username", username);
-		formData.append("password", password);
+		const userData = {
+			username: username,
+			password: password,
+		};
 		try {
-			const response = await fetch("localhost:8080/api/signup", {
+			const response = await fetch(createUserApi, {
 				method: "POST",
-				body: formData,
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(userData),
 			});
 
 			if (response.ok) {
