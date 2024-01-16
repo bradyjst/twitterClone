@@ -3,14 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { GoogleButton } from "../GoogleButton/GoogleButton";
 import { AppleButton } from "../AppleButton/AppleButton";
 
-import "./Modal.css";
+import "./LogInModal.css";
 
-interface ModalProps {
+interface LogInModalProps {
 	signInModal: boolean;
 	setSignInModal: Function;
 }
 
-export const Modal: React.FC<ModalProps> = ({
+export const LogInModal: React.FC<LogInModalProps> = ({
 	signInModal,
 	setSignInModal,
 }) => {

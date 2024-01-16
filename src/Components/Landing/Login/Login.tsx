@@ -5,7 +5,8 @@ import { GoogleButton } from "./GoogleButton/GoogleButton";
 import { AppleButton } from "./AppleButton/AppleButton";
 import { CreateAccount } from "./CreateAccountButton/CreateAccount";
 import { SignInButton } from "./SignInButton/SignInButton";
-import { Modal } from "./Modal/Modal";
+import { SignUpModal } from "./SignUpModal/SignUpModal";
+import { LogInModal } from "./LogInModal/LogInModal";
 import { Footer } from "./Footer/Footer";
 
 export interface LoginProps {}
@@ -17,8 +18,8 @@ export const Login: React.FC<LoginProps> = () => {
 	return (
 		<>
 			<div className="container">
-				{signInModal && <Modal {...{ signInModal, setSignInModal }} />}
-				{signUpModal && <Modal {...{ signInModal, setSignInModal }} />}
+				{signInModal && <LogInModal {...{ signInModal, setSignInModal }} />}
+				{signUpModal && <SignUpModal {...{ signUpModal, setSignUpModal }} />}
 
 				<div className="container-left">
 					<img
