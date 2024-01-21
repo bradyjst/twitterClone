@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./Login.css";
 
-import { GoogleButton } from "./GoogleButton/GoogleButton";
-import { AppleButton } from "./AppleButton/AppleButton";
-import { CreateAccount } from "./CreateAccountButton/CreateAccount";
-import { SignInButton } from "./SignInButton/SignInButton";
-import { SignUpModal } from "./SignUpModal/SignUpModal";
-import { LogInModal } from "./LogInModal/LogInModal";
-import { Footer } from "./Footer/Footer";
+import { GoogleButton } from "./LoginComponents/Buttons/GoogleButton/GoogleButton";
+import { AppleButton } from "./LoginComponents/Buttons/AppleButton/AppleButton";
+import { CreateAccount } from "./LoginComponents/Buttons/CreateAccountButton/CreateAccount";
+import { SignInButton } from "./LoginComponents/Buttons/SignInButton/SignInButton";
+import { SignUpModal } from "./LoginComponents/SignUpModal/SignUpModal";
+import { LogInModal } from "./LoginComponents/LogInModal/LogInModal";
+import { Footer } from "./LoginComponents/Footer/Footer";
 
 export interface LoginProps {}
 

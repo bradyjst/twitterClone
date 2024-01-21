@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TextInput } from "../InputFields/TextInput/TextInput";
 import { useNavigate } from "react-router-dom";
 
 import "./SignUpModal.css";
@@ -13,11 +14,11 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({
 	setSignUpModal,
 }) => {
 	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
+	// const [email, setEmail] = useState("");
 	const navigate = useNavigate();
 
 	console.log(username);
-	console.log(password);
+	// console.log(email);
 
 	const createUserApi = `http://localhost:8080/users`;
 
@@ -27,7 +28,7 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({
 		e.preventDefault();
 		const userData = {
 			username: username,
-			password: password,
+			// password: email,
 		};
 		try {
 			const response = await fetch(createUserApi, {
@@ -61,32 +62,29 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({
 						</button>
 					</div>
 					<div className="step-count">
-						<span>Step 1 of 5</span>
+						<span className="step-count-span">Step 1 of 5</span>
 					</div>
 				</div>
 
 				<div className="signup-form-div">
-					<span className="sign-in-span">Create your account</span>
+					<span className="signup-sign-in-span">Create your account</span>
 
 					<form className="signup-form">
 						{" "}
-						<input
+						<TextInput
+							value={username}
 							name="username"
 							autoComplete="on"
-							className="signup-username"
 							placeholder="Name"
-							type="text"
-							value={username}
 							onChange={(e) => setUsername(e.target.value)}
 						/>
-						<input
-							name="password"
-							className="signup-password"
+						{/* <TextInput
+							value={email}
+							name="email"
+							autoComplete="on"
 							placeholder="Email"
-							type="password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-						/>
+							onChange={(e) => setEmail(e.target.value)}
+						/> */}
 					</form>
 					<span className="use-phone">
 						<a className="use-phone-link" href="www.google.ca">
@@ -98,6 +96,9 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({
 						This will not be shown publicly. Confirm your own age, even if this
 						account is for a business, a pet, or something else.
 					</span>
+					<button style={{ display: "none" }} onClick={() => handleSignup}>
+						to be completed
+					</button>
 				</div>
 			</div>
 		</div>

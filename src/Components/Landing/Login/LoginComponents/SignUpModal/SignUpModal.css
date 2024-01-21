@@ -44,7 +44,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-right: 50px;
+	margin-right: 40px;
 }
 
 .signup-close-button {
@@ -59,10 +59,15 @@
 	font-weight: 100;
 }
 
+.step-count-span {
+	font-size: 20px;
+	font-weight: 600;
+}
+
 .signup-sign-in-span {
 	font-size: 28px;
 	font-weight: 700;
-	letter-spacing: -1.2px;
+	letter-spacing: 1px;
 	margin-bottom: 30px;
 }
 
@@ -73,10 +78,17 @@
 	max-width: 75%;
 }
 
+.signup-form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
 .signup-username {
 	background-color: transparent;
-	border: 1px solid rgb(160, 166, 171);
-	height: 50px;
+	border: 1px solid rgb(47, 51, 54);
+	color: white;
+	height: 55px;
 	margin-bottom: 20px;
 	padding-left: 10px;
 	border-radius: 5px;
@@ -85,9 +97,10 @@
 
 .signup-password {
 	background-color: black;
+	color: white;
 	border: 1px solid rgb(47, 51, 54);
-	height: 50px;
-	margin-bottom: 30px;
+	height: 55px;
+	margin-bottom: 20px;
 	padding-left: 10px;
 	border-radius: 5px;
 	letter-spacing: 1px;
@@ -97,7 +110,8 @@
 	display: flex;
 	align-self: flex-end;
 	text-decoration: none;
-	margin-right: 20px;
+	margin-right: 10px;
+	margin-bottom: 20px;
 }
 
 .use-phone-link {
@@ -107,12 +121,13 @@
 
 .DOB {
 	width: 70%;
+	margin-bottom: 10px;
 }
 
 .DOB-p {
 	word-wrap: break-word;
 	word-break: break-all;
 	text-overflow: unset;
-
+	color: rgb(113, 118, 123);
 	margin: 0;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { GoogleButton } from "../GoogleButton/GoogleButton";
-import { AppleButton } from "../AppleButton/AppleButton";
+import { GoogleButton } from "../Buttons/GoogleButton/GoogleButton";
+import { AppleButton } from "../Buttons/AppleButton/AppleButton";
 
 import "./LogInModal.css";
 
