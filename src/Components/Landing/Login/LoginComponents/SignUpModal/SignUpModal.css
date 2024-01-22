@@ -27,7 +27,7 @@
 
 .signup-form-div {
 	display: flex;
-	width: 75%;
+	width: 73%;
 }
 
 .signup-header {
@@ -65,7 +65,7 @@
 }
 
 .signup-sign-in-span {
-	font-size: 28px;
+	font-size: 30px;
 	font-weight: 700;
 	letter-spacing: 1px;
 	margin-bottom: 30px;
@@ -111,7 +111,7 @@
 	align-self: flex-end;
 	text-decoration: none;
 	margin-right: 10px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 .use-phone-link {
@@ -129,5 +129,38 @@
 	word-break: break-all;
 	text-overflow: unset;
 	color: rgb(113, 118, 123);
-	margin: 0;
+	margin-bottom: 20px;
+}
+
+.date-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 60px;
+	margin-bottom: 40px;
+}
+
+.date-subcontainer-1 {
+	width: 45%;
+}
+
+.date-subcontainer-2 {
+	margin-left: 10px;
+	width: 20%;
+}
+
+.date-subcontainer-3 {
+	margin-left: 10px;
+	width: 30%;
+}
+
+.signup-next-button {
+	width: 73%;
+	height: 50px;
+	border-radius: 25px;
+	background-color: Grey;
+	font-size: 17px;
+	font-weight: 700;
+	border: transparent;
+	cursor: pointer;
 }

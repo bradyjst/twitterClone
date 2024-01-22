@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TextInput } from "../InputFields/TextInput/TextInput";
+import { DateInput } from "../InputFields/DateInput/DateInput";
 import { useNavigate } from "react-router-dom";
 
 import "./SignUpModal.css";
@@ -106,10 +107,21 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({
 						This will not be shown publicly. Confirm your own age, even if this
 						account is for a business, a pet, or something else.
 					</span>
-					<button style={{ display: "none" }} onClick={() => handleSignup}>
-						to be completed
-					</button>
+					<div className="date-container">
+						<div className="date-subcontainer-1">
+							<DateInput dateSelect="Month" inputSelection="March" />
+						</div>
+						<div className="date-subcontainer-2">
+							<DateInput dateSelect="Day" inputSelection="2" />
+						</div>
+						<div className="date-subcontainer-3">
+							<DateInput dateSelect="Year" inputSelection="2022" />
+						</div>
+					</div>
 				</div>
+				<button className="signup-next-button" onClick={() => handleSignup}>
+					Next
+				</button>
 			</div>
 		</div>
 	);
