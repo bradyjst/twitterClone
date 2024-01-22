@@ -1,49 +1,131 @@
 .text-input-container-blur {
-	background-color: rgba(29, 155, 240, 0.2);
+	display: flex;
+	flex-direction: row;
 	border: 1px solid rgb(47, 51, 54);
 	border-radius: 5px;
+	height: 56px;
+	margin-bottom: 20px;
+}
+
+.text-input-was-active {
+	display: flex;
+	border: 2px solid rgb(240, 29, 29);
+	border-radius: 5px;
+	height: 56px;
+	margin-bottom: 20px;
 }
 
 .text-input-container-focus {
-	background-color: rgba(29, 155, 240, 0.2);
-	border: 1px solid rgb(29, 155, 240);
+	display: flex;
+	border: 2px solid rgb(29, 155, 240);
 	border-radius: 5px;
+	height: 56px;
+	margin-bottom: 20px;
+}
+
+.text-input-div-focus {
+	font-size: 14px;
+	transition: padding-left 150ms ease, padding-top 150ms ease,
+		font-size 150ms ease, color 150ms ease;
+}
+.text-input-div-blur {
+	font-size: 17px;
+	transition: padding-left 150ms ease, padding-top 150ms ease,
+		font-size 150ms ease, color 150ms ease;
 }
 
 .text-input-span-focus {
-	position: absolute;
+	position: relative;
+	width: 100%;
+	padding-left: 6px;
+	padding-top: 5px;
+	font-size: 14px;
+	color: rgb(29, 155, 240);
+	transition: padding-left 150ms ease, padding-top 150ms ease,
+		font-size 150ms ease, color 150ms ease;
 }
 
 .text-input-span-blur {
 	position: relative;
-	top: 10%;
-	left: 5%;
+	width: 100%;
+	height: 1px;
+	padding-left: 10px;
+	padding-top: 17px;
+	font-size: 17px;
+	color: rgb(113, 118, 123);
+	transition: padding-left 150ms ease, padding-top 150ms ease,
+		font-size 150ms ease, color 150ms ease;
+}
+
+.text-span-was-active {
+	position: relative;
+	width: 100%;
+	padding-left: 6px;
+	padding-top: 5px;
+	font-size: 14px;
+	color: rgb(240, 29, 29);
+	transition: padding-left 150ms ease, padding-top 150ms ease,
+		font-size 150ms ease, color 150ms ease;
+}
+
+.text-div-was-active {
+	position: relative;
+	width: 100%;
+	height: 1px;
+	padding-left: 5px;
+	padding-top: 12px;
+	font-size: 17px;
+	color: rgb(113, 118, 123);
+	transition: padding-left 150ms ease, padding-top 150ms ease,
+		font-size 150ms ease, color 150ms ease;
 }
 
 .text-input-blur {
 	background-color: transparent;
 	outline: none;
+	transition: height 300ms ease;
 	border: none;
 	width: 100%;
-	height: 50%;
+	height: 40px;
 	color: white;
-	height: 55px;
+	height: 17px;
 	margin-bottom: 20px;
-	padding-left: 10px;
+	padding-top: -20px;
+	padding-left: 15px;
 	border-radius: 5px;
 	letter-spacing: 1px;
+	resize: none;
 }
 
 .text-input-focus {
 	background-color: transparent;
 	outline: none;
+	transition: height 300ms ease;
 	border: none;
 	width: 100%;
-	height: 50%;
+	max-height: 56px;
 	color: white;
 	height: 55px;
 	margin-bottom: 20px;
-	padding-left: 10px;
+	padding-left: 2px;
+	padding-bottom: 25px;
 	border-radius: 5px;
 	letter-spacing: 1px;
+	resize: none;
+}
+
+.text-input-char-count {
+	display: flex;
+	justify-content: flex-end;
+	width: 70px;
+	color: rgb(113, 118, 123);
+	padding-top: 6px;
+	padding-right: 10px;
+}
+
+.whats-your-name {
+	margin-top: -15px;
+	margin-bottom: 15px;
+	padding-left: 5px;
+	color: rgb(240, 29, 29);
 }
