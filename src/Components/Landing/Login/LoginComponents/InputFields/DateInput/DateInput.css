@@ -7,6 +7,28 @@
 	border-radius: 5px;
 }
 
+.date-input-container-blue {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgb(29, 155, 240);
+	border-radius: 5px;
+}
+
+.date-input-label-container {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+}
+
+.date-input-v-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+}
+
 .date-input-date-select {
 	color: rgb(113, 118, 123);
 	position: absolute;
@@ -18,10 +40,21 @@
 	pointer-events: none;
 }
 
+.date-input-date-select-blue {
+	color: rgb(28, 155, 240);
+	position: absolute;
+	padding-top: 6px;
+	font-size: 14px;
+	width: 80%;
+	height: 30%;
+	padding-left: 10px;
+	pointer-events: none;
+}
+
 .date-input-select {
-	padding-left: 8px;
+	padding-left: 10px;
 	font-size: 17px;
-	padding-top: 10px;
+	padding-top: 18px;
 	border: none;
 	color: white;
 	outline: none;
