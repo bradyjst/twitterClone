@@ -6,14 +6,10 @@ import { useNavigate } from "react-router-dom";
 import "./SignUpModal.css";
 
 interface SignUpModalProps {
-	signUpModal: boolean;
 	setSignUpModal: Function;
 }
 
-export const SignUpModal: React.FC<SignUpModalProps> = ({
-	signUpModal,
-	setSignUpModal,
-}) => {
+export const SignUpModal: React.FC<SignUpModalProps> = ({ setSignUpModal }) => {
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [inputCount, setInputCount] = useState(0);
@@ -109,13 +105,13 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({
 					</span>
 					<div className="date-container">
 						<div className="date-subcontainer-1">
-							<DateInput dateSelect="Month" inputSelection="March" />
+							<DateInput dateSelect="Month" />
 						</div>
 						<div className="date-subcontainer-2">
-							<DateInput dateSelect="Day" inputSelection="2" />
+							<DateInput dateSelect="Day" />
 						</div>
 						<div className="date-subcontainer-3">
-							<DateInput dateSelect="Year" inputSelection="2022" />
+							<DateInput dateSelect="Year" />
 						</div>
 					</div>
 				</div>

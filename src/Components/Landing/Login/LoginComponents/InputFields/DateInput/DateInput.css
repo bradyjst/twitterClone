@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 80%;
+	cursor: pointer;
 }
 
 .date-input-container {
@@ -26,6 +27,11 @@
 .date-input-selection {
 	padding-left: 10px;
 	font-size: 17px;
+	border: none;
+	outline: none;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
 }
 
 .date-input-v {
@@ -36,3 +42,8 @@
 	color: rgb(113, 118, 123);
 	transform: scale(1.5, 0.6);
 }
+
+/* .date-select-modal {
+	background-color: red;
+	display: flex;
+} */
