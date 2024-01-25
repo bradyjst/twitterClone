@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { PageOne } from "./PageOne/PageOne";
+import { PageTwo } from "./PageTwo/PageTwo";
 
 import "./SignUpModal.css";
 
@@ -12,21 +13,21 @@ export const SignUpModal: React.FC<SignUpModalProps> = ({
 	setSignUpModal,
 	signUpModal,
 }) => {
-	const [handlePage, setHandlePage] = useState(0);
+	const [handlePage, setHandlePage] = useState(1);
 
 	return (
 		<div className="signup-modal-container">
 			<div className="signup-modal">
-				{handlePage === 0 ? (
+				{handlePage === 1 ? (
 					<PageOne
 						{...{ signUpModal, setSignUpModal, handlePage, setHandlePage }}
 					/>
 				) : null}
-				{/* {handlePage === 1 ? (
+				{handlePage === 2 ? (
 					<PageTwo
 						{...{ signUpModal, setSignUpModal, handlePage, setHandlePage }}
 					/>
-				) : null} */}
+				) : null}
 			</div>
 		</div>
 	);

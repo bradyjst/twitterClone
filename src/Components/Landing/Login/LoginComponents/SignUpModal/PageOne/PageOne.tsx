@@ -62,7 +62,7 @@ export const PageOne: React.FC<PageOneProps> = ({
 
 	return (
 		<>
-			<Header {...{ signUpModal, setSignUpModal }} />
+			<Header {...{ signUpModal, setSignUpModal, handlePage, setHandlePage }} />
 			<div className="signup-form-div">
 				<span className="signup-sign-in-span">Create your account</span>
 
@@ -106,7 +106,9 @@ export const PageOne: React.FC<PageOneProps> = ({
 						<DateInput dateSelect="Year" />
 					</div>
 				</div>
-				<button className="signup-next-button">Next</button>
+				<button onClick={() => setHandlePage(2)} className="signup-next-button">
+					Next
+				</button>
 			</div>
 		</>
 	);
