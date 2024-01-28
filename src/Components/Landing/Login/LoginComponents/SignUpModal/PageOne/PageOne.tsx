@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-
 import { TextInput } from "../../InputFields/TextInput/TextInput";
 import { DateInput } from "../../InputFields/DateInput/DateInput";
 import { Header } from "../Header/Header";
+import { NextButton } from "../../Buttons/NextButton/NextButton";
 import "./PageOne.css";
 
 interface PageOneProps {
@@ -21,6 +21,13 @@ export const PageOne: React.FC<PageOneProps> = ({
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [inputCount, setInputCount] = useState(0);
+	const [buttonEnable, setButtonEnable] = useState(false);
+
+	useEffect(() => {
+		if (username.length > 0 && email.length > 0) {
+			setButtonEnable(true);
+		}
+	}, [username, email]);
 
 	const maxLength = 50;
 
@@ -106,9 +113,10 @@ export const PageOne: React.FC<PageOneProps> = ({
 						<DateInput dateSelect="Year" />
 					</div>
 				</div>
-				<button onClick={() => setHandlePage(2)} className="signup-next-button">
-					Next
-				</button>
+				<NextButton
+					buttonEnable={buttonEnable}
+					onClick={() => setHandlePage(2)}
+				/>
 			</div>
 		</>
 	);
