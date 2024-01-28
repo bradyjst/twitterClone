@@ -4,11 +4,13 @@ import "./TextInput.css";
 interface TextInputProps {
 	placeholder: string;
 	value: string;
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	onClick?: Function;
 	name: string;
 	autoComplete: string;
 	maxLength?: number;
 	inputCount?: number;
+	readOnly?: boolean;
 }
 
 export const TextInput: React.FC<TextInputProps> = ({
@@ -16,6 +18,7 @@ export const TextInput: React.FC<TextInputProps> = ({
 	value,
 	onChange,
 	name,
+	readOnly,
 	autoComplete,
 	maxLength,
 	inputCount,
@@ -73,6 +76,7 @@ export const TextInput: React.FC<TextInputProps> = ({
 						type="text"
 						value={value}
 						onChange={onChange}
+						readOnly={readOnly}
 						maxLength={maxLength}
 					/>
 				</label>

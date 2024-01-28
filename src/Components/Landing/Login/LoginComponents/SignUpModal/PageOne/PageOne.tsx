@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { TextInput } from "../../InputFields/TextInput/TextInput";
 import { DateInput } from "../../InputFields/DateInput/DateInput";
 import { Header } from "../Header/Header";
@@ -10,6 +10,20 @@ interface PageOneProps {
 	handlePage: number;
 	setSignUpModal: Function;
 	setHandlePage: Function;
+	username: string;
+	setUsername: Function;
+	email: string;
+	setEmail: Function;
+	buttonEnable: boolean;
+	setButtonEnable: Function;
+	inputCount: number;
+	setInputCount: Function;
+	day: string;
+	setDay: Function;
+	month: string;
+	setMonth: Function;
+	year: string;
+	setYear: Function;
 }
 
 export const PageOne: React.FC<PageOneProps> = ({
@@ -17,17 +31,32 @@ export const PageOne: React.FC<PageOneProps> = ({
 	setSignUpModal,
 	handlePage,
 	setHandlePage,
+	username,
+	setUsername,
+	email,
+	setEmail,
+	buttonEnable,
+	setButtonEnable,
+	inputCount,
+	setInputCount,
+	day,
+	setDay,
+	month,
+	setMonth,
+	year,
+	setYear,
 }) => {
-	const [username, setUsername] = useState("");
-	const [email, setEmail] = useState("");
-	const [inputCount, setInputCount] = useState(0);
-	const [buttonEnable, setButtonEnable] = useState(false);
-
 	useEffect(() => {
-		if (username.length > 0 && email.length > 0) {
+		if (
+			username.length > 0 &&
+			email.length > 0 &&
+			day !== "" &&
+			month !== "" &&
+			year !== ""
+		) {
 			setButtonEnable(true);
 		}
-	}, [username, email]);
+	}, [username, email, setButtonEnable, day, year, month]);
 
 	const maxLength = 50;
 
@@ -65,7 +94,9 @@ export const PageOne: React.FC<PageOneProps> = ({
 
 	useEffect(() => {
 		setInputCount(username.length);
-	}, [username]);
+	}, [username, setInputCount]);
+
+	console.log("month, day, year = ", month, day, year);
 
 	return (
 		<>
@@ -104,13 +135,22 @@ export const PageOne: React.FC<PageOneProps> = ({
 				</span>
 				<div className="date-container">
 					<div className="date-subcontainer-1">
-						<DateInput dateSelect="Month" />
+						<DateInput
+							dateSelect="Month"
+							{...{ setDay, setMonth, setYear, day, month, year }}
+						/>
 					</div>
 					<div className="date-subcontainer-2">
-						<DateInput dateSelect="Day" />
+						<DateInput
+							dateSelect="Day"
+							{...{ setDay, setMonth, setYear, day, month, year }}
+						/>
 					</div>
 					<div className="date-subcontainer-3">
-						<DateInput dateSelect="Year" />
+						<DateInput
+							dateSelect="Year"
+							{...{ setDay, setMonth, setYear, day, month, year }}
+						/>
 					</div>
 				</div>
 				<NextButton

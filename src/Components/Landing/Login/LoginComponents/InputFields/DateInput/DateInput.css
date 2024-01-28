@@ -75,7 +75,9 @@
 	transform: scale(1.5, 0.6);
 }
 
-/* .date-select-modal {
-	background-color: red;
-	display: flex;
-} */
+.date-input-selected {
+	position: relative;
+	top: 50%;
+	left: 5%;
+	pointer-events: none;
+}

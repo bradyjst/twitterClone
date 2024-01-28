@@ -3,9 +3,23 @@ import "./DateInput.css";
 
 interface DateInputProps {
 	dateSelect: string;
+	setDay: Function;
+	setMonth: Function;
+	setYear: Function;
+	day: string;
+	month: string;
+	year: string;
 }
 
-export const DateInput: React.FC<DateInputProps> = ({ dateSelect }) => {
+export const DateInput: React.FC<DateInputProps> = ({
+	dateSelect,
+	setDay,
+	setMonth,
+	setYear,
+	day,
+	month,
+	year,
+}) => {
 	const [inFocus, setInFocus] = useState(false);
 	const days = Array.from({ length: 31 }, (_, i) => i + 1);
 	const endYear = new Date().getFullYear();
@@ -58,11 +72,15 @@ export const DateInput: React.FC<DateInputProps> = ({ dateSelect }) => {
 					<div className="date-input-v-container">
 						<div className="date-input-label-container">
 							<label className={determineLabelClass()}>{dateSelect}</label>
-							<select className="date-input-select">
+
+							<select
+								onChange={(e) => setMonth(e.target.value)}
+								className="date-input-select"
+							>
 								<option value="" disabled selected></option>
-								{months.map((month, index) => (
-									<option key={index} value={month}>
-										{month}
+								{months.map((months, index) => (
+									<option key={index} value={months}>
+										{months}
 									</option>
 								))}
 							</select>
@@ -81,7 +99,10 @@ export const DateInput: React.FC<DateInputProps> = ({ dateSelect }) => {
 					<div className="date-input-v-container">
 						<div className="date-input-label-container">
 							<label className={determineLabelClass()}>{dateSelect}</label>
-							<select className="date-input-select">
+							<select
+								onChange={(e) => setDay(e.target.value)}
+								className="date-input-select"
+							>
 								<option value="" disabled selected></option>
 								{days.map((day) => (
 									<option key={day} value={day}>
@@ -104,7 +125,10 @@ export const DateInput: React.FC<DateInputProps> = ({ dateSelect }) => {
 					<div className="date-input-v-container">
 						<div className="date-input-label-container">
 							<label className={determineLabelClass()}>{dateSelect}</label>
-							<select className="date-input-select">
+							<select
+								onChange={(e) => setYear(e.target.value)}
+								className="date-input-select"
+							>
 								<option value="" disabled selected></option>
 								{years.map((year) => (
 									<option key={year} value={year}>

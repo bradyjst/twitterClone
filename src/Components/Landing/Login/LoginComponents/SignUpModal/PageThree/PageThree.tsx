@@ -8,6 +8,13 @@ interface PageThreeProps {
 	setHandlePage: Function;
 	signUpModal: boolean;
 	handlePage: number;
+	username: string;
+	email: string;
+	dateOfBirth: {
+		day: string;
+		month: string;
+		year: string;
+	};
 }
 
 export const PageThree: React.FC<PageThreeProps> = ({
@@ -15,33 +22,55 @@ export const PageThree: React.FC<PageThreeProps> = ({
 	setSignUpModal,
 	handlePage,
 	setHandlePage,
+	username,
+	email,
+	dateOfBirth,
 }) => {
 	return (
 		<>
-			<Header {...{ setSignUpModal, setHandlePage, handlePage, signUpModal }} />
+			<Header
+				{...{
+					setSignUpModal,
+					setHandlePage,
+					handlePage,
+					signUpModal,
+				}}
+			/>
 			<div className="page-three-container">
 				<span className="signup-sign-in-span">Create your account</span>
-				<TextInput
-					placeholder="Name"
-					autoComplete="on"
-					name="Name"
-					value=""
-					onChange={(e) => setHandlePage(e)}
-				/>
-				<TextInput
-					placeholder="Email"
-					autoComplete="on"
-					name="Name"
-					value=""
-					onChange={(e) => setHandlePage(e)}
-				/>
-				<TextInput
-					placeholder="Date of Birth"
-					autoComplete="on"
-					name="Name"
-					value=""
-					onChange={(e) => setHandlePage(e)}
-				/>
+				<div onClick={() => setHandlePage(1)}>
+					<TextInput
+						placeholder="Name"
+						autoComplete="on"
+						name="Name"
+						value={username}
+						readOnly={true}
+					/>
+				</div>
+				<div onClick={() => setHandlePage(1)}>
+					<TextInput
+						placeholder="Email"
+						autoComplete="on"
+						name="Name"
+						value={email}
+						readOnly={true}
+					/>
+				</div>
+				<div onClick={() => setHandlePage(1)}>
+					<TextInput
+						placeholder="Date of Birth"
+						autoComplete="on"
+						name="Name"
+						value={
+							dateOfBirth.month +
+							" " +
+							dateOfBirth.day +
+							", " +
+							dateOfBirth.year
+						}
+						readOnly={true}
+					/>
+				</div>
 
 				<div className="signup-clause">
 					By signing up, you agree to our
@@ -68,7 +97,7 @@ export const PageThree: React.FC<PageThreeProps> = ({
 					Others will be able to find you by email or phone number, when
 					provided, unless you choose otherwise{" "}
 					<a className="signup-links" href="http://localhost:3000/">
-						here{" "}
+						here
 					</a>
 					.
 				</div>
