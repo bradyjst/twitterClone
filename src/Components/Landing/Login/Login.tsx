@@ -40,6 +40,7 @@ export const Login: React.FC<LoginProps> = () => {
 					<div className="joincontainer">
 						<span className="joinspan">Join today.</span>
 					</div>
+
 					<div className="external-auth">
 						<GoogleButton />
 						<AppleButton />

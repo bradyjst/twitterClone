@@ -89,24 +89,6 @@ export const LogInModal: React.FC<LogInModalProps> = ({
 						<div className="si-line"></div>
 					</div>
 					<form className="login-form" onSubmit={handleLogin}>
-						{" "}
-						{/* <input
-							className="username"
-							name="username"
-							autoComplete="on"
-							placeholder="Username..."
-							type="text"
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
-						/>
-						<input
-							className="password"
-							name="password"
-							placeholder="Password..."
-							type="password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-						/> */}
 						<TextInput
 							placeholder="Username"
 							value={username}

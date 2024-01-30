@@ -13,6 +13,12 @@
 	flex-direction: row;
 }
 
+.no-work-span {
+	font-size: 14px;
+	padding-bottom: 10px;
+	color: red;
+}
+
 .profile-img {
 	width: 20px;
 	height: 20px;

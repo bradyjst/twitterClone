@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PageThree.css";
 import { Header } from "../Header/Header";
 import { TextInput } from "../../InputFields/TextInput/TextInput";
@@ -27,6 +27,8 @@ export const PageThree: React.FC<PageThreeProps> = ({
 	password,
 	dateOfBirth,
 }) => {
+	const [errorMessage2, setErrorMessage2] = useState("");
+
 	const navigate = useNavigate();
 
 	const createUserApi = `http://localhost:8080/users`;
@@ -52,10 +54,12 @@ export const PageThree: React.FC<PageThreeProps> = ({
 				navigate("/home");
 				setSignUpModal(!signUpModal);
 			} else {
+				setErrorMessage2("Could not create account. Please try again later.");
 				console.error("signup failed");
 			}
 		} catch (error) {
 			console.log(error);
+			setErrorMessage2("Could not create account. Please try again later.");
 		}
 	};
 
@@ -134,6 +138,8 @@ export const PageThree: React.FC<PageThreeProps> = ({
 					</a>
 					.
 				</div>
+
+				{errorMessage2 && <div className="error-message">{errorMessage2}</div>}
 
 				<button
 					onClick={(e) => {
