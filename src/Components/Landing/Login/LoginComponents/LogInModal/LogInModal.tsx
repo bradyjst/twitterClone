@@ -1,18 +1,23 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { GoogleButton } from "../Buttons/GoogleButton/GoogleButton";
 import { AppleButton } from "../Buttons/AppleButton/AppleButton";
 
 import "./LogInModal.css";
+import { TextInput } from "../InputFields/TextInput/TextInput";
 
 interface LogInModalProps {
 	signInModal: boolean;
 	setSignInModal: Function;
+	signUpModal: boolean;
+	setSignUpModal: Function;
 }
 
 export const LogInModal: React.FC<LogInModalProps> = ({
 	signInModal,
 	setSignInModal,
+	signUpModal,
+	setSignUpModal,
 }) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
@@ -85,7 +90,7 @@ export const LogInModal: React.FC<LogInModalProps> = ({
 					</div>
 					<form className="login-form" onSubmit={handleLogin}>
 						{" "}
-						<input
+						{/* <input
 							className="username"
 							name="username"
 							autoComplete="on"
@@ -101,6 +106,20 @@ export const LogInModal: React.FC<LogInModalProps> = ({
 							type="password"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
+						/> */}
+						<TextInput
+							placeholder="Username"
+							value={username}
+							name={"username"}
+							autoComplete={"off"}
+							onChange={(e) => setUsername(e.target.value)}
+						/>
+						<TextInput
+							placeholder="Password"
+							value={password}
+							name={"password"}
+							autoComplete={"off"}
+							onChange={(e) => setPassword(e.target.value)}
 						/>
 						<button className="login-button" type="submit">
 							Sign in
@@ -110,9 +129,16 @@ export const LogInModal: React.FC<LogInModalProps> = ({
 						)}
 						<div className="no-account-div">
 							<span className="no-account-span">Don't have an account?</span>
-							<Link className="signup" to="/signup">
-								<h6 className="signup">Sign up</h6>
-							</Link>
+
+							<h6
+								onClick={() => {
+									setSignInModal(!signInModal);
+									setSignUpModal(!signUpModal);
+								}}
+								className="signup"
+							>
+								Sign up
+							</h6>
 						</div>
 					</form>
 				</div>

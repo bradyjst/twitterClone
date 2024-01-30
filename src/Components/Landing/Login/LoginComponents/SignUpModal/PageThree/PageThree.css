@@ -8,3 +8,17 @@
 .signup-clause {
 	color: rgb(113, 118, 123);
 }
+
+.signup-finish-button {
+	border-radius: 25px;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	background-color: rgb(29, 155, 240);
+	color: white;
+	font-size: 17px;
+	font-weight: 700;
+	border: transparent;
+	cursor: pointer;
+	margin-top: 30px;
+}

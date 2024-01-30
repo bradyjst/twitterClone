@@ -18,7 +18,11 @@ export const Login: React.FC<LoginProps> = () => {
 	return (
 		<>
 			<div className="container">
-				{signInModal && <LogInModal {...{ signInModal, setSignInModal }} />}
+				{signInModal && (
+					<LogInModal
+						{...{ signInModal, setSignInModal, setSignUpModal, signUpModal }}
+					/>
+				)}
 				{signUpModal && <SignUpModal {...{ signUpModal, setSignUpModal }} />}
 
 				<div className="container-left">

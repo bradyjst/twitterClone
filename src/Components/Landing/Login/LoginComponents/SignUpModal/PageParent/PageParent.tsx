@@ -13,7 +13,7 @@ export const PageParent: React.FC<PageParentProps> = ({
 	setSignUpModal,
 }) => {
 	const [username, setUsername] = useState("");
-	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 	const [day, setDay] = useState("");
 	const [month, setMonth] = useState("");
 	const [year, setYear] = useState("");
@@ -24,7 +24,7 @@ export const PageParent: React.FC<PageParentProps> = ({
 	});
 	const [inputCount, setInputCount] = useState(0);
 	const [buttonEnable, setButtonEnable] = useState(false);
-	const [handlePage, setHandlePage] = useState(3);
+	const [handlePage, setHandlePage] = useState(1);
 
 	useEffect(() => {
 		setDateOfBirth({ month, day, year });
@@ -43,8 +43,8 @@ export const PageParent: React.FC<PageParentProps> = ({
 						setHandlePage,
 						username,
 						setUsername,
-						email,
-						setEmail,
+						password,
+						setPassword,
 						inputCount,
 						setInputCount,
 						buttonEnable,
@@ -71,7 +71,7 @@ export const PageParent: React.FC<PageParentProps> = ({
 						handlePage,
 						setHandlePage,
 						username,
-						email,
+						password,
 						dateOfBirth,
 					}}
 				/>

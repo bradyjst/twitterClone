@@ -141,7 +141,7 @@
 .signup {
 	font-size: 12px;
 	text-decoration: none;
-
+	cursor: pointer;
 	color: rgb(29, 155, 240);
 }
 

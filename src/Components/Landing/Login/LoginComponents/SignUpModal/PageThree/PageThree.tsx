@@ -2,6 +2,7 @@ import React from "react";
 import "./PageThree.css";
 import { Header } from "../Header/Header";
 import { TextInput } from "../../InputFields/TextInput/TextInput";
+import { useNavigate } from "react-router-dom";
 
 interface PageThreeProps {
 	setSignUpModal: Function;
@@ -9,7 +10,7 @@ interface PageThreeProps {
 	signUpModal: boolean;
 	handlePage: number;
 	username: string;
-	email: string;
+	password: string;
 	dateOfBirth: {
 		day: string;
 		month: string;
@@ -23,9 +24,41 @@ export const PageThree: React.FC<PageThreeProps> = ({
 	handlePage,
 	setHandlePage,
 	username,
-	email,
+	password,
 	dateOfBirth,
 }) => {
+	const navigate = useNavigate();
+
+	const createUserApi = `http://localhost:8080/users`;
+
+	const handleSignup = async (
+		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+	) => {
+		e.preventDefault();
+		const userData = {
+			username: username,
+			password: password,
+		};
+		try {
+			const response = await fetch(createUserApi, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(userData),
+			});
+
+			if (response.ok) {
+				navigate("/home");
+				setSignUpModal(!signUpModal);
+			} else {
+				console.error("signup failed");
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
 		<>
 			<Header
@@ -49,10 +82,10 @@ export const PageThree: React.FC<PageThreeProps> = ({
 				</div>
 				<div onClick={() => setHandlePage(1)}>
 					<TextInput
-						placeholder="Email"
+						placeholder="Password"
 						autoComplete="on"
 						name="Name"
-						value={email}
+						value={password}
 						readOnly={true}
 					/>
 				</div>
@@ -101,6 +134,15 @@ export const PageThree: React.FC<PageThreeProps> = ({
 					</a>
 					.
 				</div>
+
+				<button
+					onClick={(e) => {
+						handleSignup(e);
+					}}
+					className="signup-finish-button"
+				>
+					Complete Signup
+				</button>
 			</div>
 		</>
 	);

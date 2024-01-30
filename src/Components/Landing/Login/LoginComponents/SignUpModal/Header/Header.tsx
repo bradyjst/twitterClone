@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
 				</button>
 			</div>
 			<div className="step-count">
-				<span className="step-count-span">Step {handlePage} of 5</span>
+				<span className="step-count-span">Step {handlePage} of 3</span>
 			</div>
 		</div>
 	);

@@ -12,8 +12,8 @@ interface PageOneProps {
 	setHandlePage: Function;
 	username: string;
 	setUsername: Function;
-	email: string;
-	setEmail: Function;
+	password: string;
+	setPassword: Function;
 	buttonEnable: boolean;
 	setButtonEnable: Function;
 	inputCount: number;
@@ -33,8 +33,8 @@ export const PageOne: React.FC<PageOneProps> = ({
 	setHandlePage,
 	username,
 	setUsername,
-	email,
-	setEmail,
+	password,
+	setPassword,
 	buttonEnable,
 	setButtonEnable,
 	inputCount,
@@ -49,48 +49,16 @@ export const PageOne: React.FC<PageOneProps> = ({
 	useEffect(() => {
 		if (
 			username.length > 0 &&
-			email.length > 0 &&
+			password.length > 0 &&
 			day !== "" &&
 			month !== "" &&
 			year !== ""
 		) {
 			setButtonEnable(true);
 		}
-	}, [username, email, setButtonEnable, day, year, month]);
+	}, [username, password, setButtonEnable, day, year, month]);
 
 	const maxLength = 50;
-
-	// console.log(username);
-	// console.log(email);
-
-	// const createUserApi = `http://localhost:8080/users`;
-
-	// const handleSignup = async (
-	// 	e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-	// ) => {
-	// 	e.preventDefault();
-	// 	const userData = {
-	// 		username: username,
-	// 		password: email,
-	// 	};
-	// 	try {
-	// 		const response = await fetch(createUserApi, {
-	// 			method: "POST",
-	// 			headers: {
-	// 				"Content-Type": "application/json",
-	// 			},
-	// 			body: JSON.stringify(userData),
-	// 		});
-
-	// 		if (response.ok) {
-	// 			navigate("/");
-	// 		} else {
-	// 			console.error("signup failed");
-	// 		}
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
 
 	useEffect(() => {
 		setInputCount(username.length);
@@ -109,18 +77,18 @@ export const PageOne: React.FC<PageOneProps> = ({
 					<TextInput
 						value={username}
 						name="username"
-						autoComplete="on"
+						autoComplete="off"
 						placeholder="Name"
 						maxLength={maxLength}
 						inputCount={inputCount}
 						onChange={(e) => setUsername(e.target.value)}
 					/>
 					<TextInput
-						value={email}
-						name="email"
-						autoComplete="on"
-						placeholder="Email"
-						onChange={(e) => setEmail(e.target.value)}
+						value={password}
+						name="password"
+						autoComplete="off"
+						placeholder="Password"
+						onChange={(e) => setPassword(e.target.value)}
 					/>
 				</form>
 				<span className="use-phone">
